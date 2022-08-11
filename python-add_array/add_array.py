@@ -11,7 +11,12 @@ real    0m8.573s
 user    0m8.467s
 sys     0m0.025s
 
+$ time python3 add_array.py 100000 100000
+Python3での実行結果 10000000000
 
+real    15m58.473s
+user    14m17.617s
+sys     0m3.486s
 '''
 
 # 配列の各要素に+1し、最後に合計数を返します。
@@ -25,7 +30,7 @@ def add_array(n, x):
     for i in range(x):
         for j in range(n):
             ary[j] += 1
-    # 合計値を返す
+    # 合計値を返す 新規に配列を0から舐めていくと若干遅かったのでsum()にする
     return sum(ary)
 
 args = sys.argv
