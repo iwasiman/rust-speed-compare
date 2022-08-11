@@ -31,7 +31,7 @@ echo "実行結果 " . add_array(100000, 100000) . PHP_EOL;
  * @param int $x 処理を繰り返す回数
  * returns int  配列の各要素の合計値
  */
-function  add_array($n, $x) {
+function add_array($n, $x) {
     $array = [];
     for ($i = 0; $i < $n; $i++) {
         $array[$i] = 0;
