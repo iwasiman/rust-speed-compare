@@ -9,26 +9,26 @@ OpenJDK 64-Bit Server VM Homebrew (build 18.0.2+0, mixed mode, sharing)
 
 $ javac Main.java
 
-$ time java Main 10000  10000
+$ time java Main 10000 10000
 Javaでの実行結果 100000000
 
-real    0m4.767s
-user    0m4.197s
-sys     0m0.249s
-
-$ time java Main 100000  100000
-Javaでの実行結果 10000000000
-
-real    7m8.722s
-user    7m7.745s
-sys     0m1.789s
+real    0m0.222s
+user    0m0.154s
+sys     0m0.019s
 
 $ time java Main 100000 100000
-Javaでの実行結果 1410065408 (intを使った場合)
+Javaでの実行結果 10000000000
 
-real    0m9.114s
-user    0m8.721s
-sys     0m0.055s
+real    0m8.516s
+user    0m8.080s
+sys     0m0.045s
+
+$ time java Main 1000000 1000000
+Javaでの実行結果 1000000000000
+
+real    14m22.989s
+user    13m41.243s
+sys     0m2.683s
 
 */
 
@@ -48,20 +48,21 @@ public class Main {
      */
     public static BigInteger addArray(int n, int x) {
         // 引数n個の要素を持った配列を作り各要素は0に初期化
-        BigInteger[] ary = new BigInteger[n];
-        Arrays.fill(ary, new BigInteger("0"));
+        int[] ary = new int[n];
+        Arrays.fill(ary, 0);
         // 引数のx回、配列の全要素に+1していく
         for (int count = 0; count < x; count++) {
             for (int index = 0; index < n; index++) {
-                ary[index] = (ary[index]).add(new BigInteger("1"));
+                ary[index] += 1;
             }
         }
         // Stream APIで合計が出せるかと思ったが普通にやる
         //return Arrays.stream(ary).sum();
+        // intでやると桁あふれしてくるので結果だけはBigInteger型で。
         BigInteger total = new BigInteger("0");
         for (int index = 0; index < ary.length; index++) {
-            BigInteger in = ary[index];
-            total = total.add(ary[index]);
+            BigInteger theValue = new BigInteger(String.valueOf(ary[index]));
+            total = total.add(theValue);
         }
         return total;
     }
