@@ -31,6 +31,15 @@ Golangでの実行結果 1000000000000
 real    10m5.680s 100万件、Goで10分5秒。
 user    9m37.801s
 sys     0m2.381s
+
+$ time ./golang-add_array 2000000 2000000
+Golangでの実行結果 4000000000000
+
+real    45m10.163s 200万件、45分10秒
+user    40m2.944s
+sys     0m12.304s
+再実施
+
 */
 
 func main() {

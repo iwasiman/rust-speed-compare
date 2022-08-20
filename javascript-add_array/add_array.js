@@ -23,6 +23,13 @@ real    23m15.576s
 user    20m51.979s
 sys     0m5.015s
 
+$ time node add_array.js 2000000 2000000
+JavaScriptでの実行結果 4000000000000
+
+real    86m5.192s
+user    84m6.356s
+sys     0m12.752s
+
 */
 
 /*

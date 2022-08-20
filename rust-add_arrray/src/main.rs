@@ -39,6 +39,13 @@ real    10m30.869s   100万件だとRustでも10分半かかる。
 user    10m13.068s
 sys     0m1.511s
 
+$ time ./target/release/rust-add_arrray 2000000 2000000
+Rust 実行結果 4000000000000
+
+real    43m36.613s  200万件だと43分半。
+user    42m20.085s
+sys     0m7.737s
+
 */
 
 

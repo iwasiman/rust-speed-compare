@@ -30,6 +30,13 @@ real    14m22.989s
 user    13m41.243s
 sys     0m2.683s
 
+$ time java Main 2000000 2000000
+Javaでの実行結果 4000000000000
+
+real    58m30.928s
+user    56m36.933s
+sys     0m12.476s
+
 */
 
 
