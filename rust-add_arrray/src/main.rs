@@ -28,7 +28,7 @@ sys     0m0.002s
 $ time ./target/release/rust-add_arrray 100000 100000
 実行結果 10000000000
 
-real    0m4.866s (PHPの1/37!!)
+real    0m4.866s
 user    0m4.842s
 sys     0m0.007s
 
